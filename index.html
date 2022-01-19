@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <!-- HEADER BAR -->
+    <body style="height: 100vh; width: 100vw; overflow: hidden; background-color: #cccccc">
+    <div id="header-bar" style="padding: 10px 20px; width: 100%; height: 128px;">
+      <div class="wrapper header-wrapper" id="left-header-bar">
+            <div class="col-md header-column">
+                <h1 style="margin-top: 10px; font-size: 60px;">Spacestagram</h1>
+                <h3 style="margin-top: 0px;">Brought to you by NASA's Astronomy Photo of the Dat (APOD) API</h3>
+            </div>
+      </div>
+    </div>
+    <!-- END HEADER BAR -->
+
+    <!-- MAIN WINDOW -->
+    <div id="main-window" style="width: 100vw; height: calc(100vh - 128px);">
+        <div id="image-wrapper" class="">
+            <img id="image" src="https://apod.nasa.gov/apod/image/2201/OrionCross_LucyH_1080.jpg">
+            <h3 id="image-title">title</h3>
+            <h5 id="image-description">description</h5>
+            <h5 id="image-date">today or something</h5>
+        </div>
+    </div>
+    <!-- END MAIN WINDOW -->
+  </body>
+</html>
