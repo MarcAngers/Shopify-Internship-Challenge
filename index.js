@@ -1,5 +1,5 @@
 const NASA = "https://api.nasa.gov/planetary/apod";
-const YOUTUBE = "https://img.youtube.com/vi/"
+const YOUTUBE = "https://i3.ytimg.com/vi/"
 const API_KEY = "ihgd8gabFuIQjZVbRejavE0d0uwa3MQSPLaiMBG4";
 
 var today = new Date();
@@ -33,7 +33,7 @@ function loadNewImage() {
             imagewrapper.classList.toggle("loading");
             setTimeout(() => { 
                 if (data.media_type == "video")
-                    image.src = YOUTUBE + "RtDSxi-D4KA/default.jpg";
+                    image.src = YOUTUBE + getVideoID(data.url) + "/maxresdefault.jpg";
                 else
                     image.src = data.url;
                 imagetitle.innerText = data.title;
@@ -54,4 +54,8 @@ function parseDate(d) {
     let year = d.getFullYear();
 
     return year + "-" + month + "-" + day;
+}
+
+function getVideoID(v) {
+    return v.substring(v.lastIndexOf("/") + 1, v.lastIndexOf("?"));
 }
