@@ -1,20 +1,24 @@
-#image-wrapper.loading {
-    animation: fadeout;
-    animation-duration: 0.3s;
-    opacity: 0;
-}
-
 #image-wrapper {
     animation: fadein;
     animation-duration: 0.3s;
-    opacity: 100;
+    opacity: 100%;
 
+    position: absolute;
     margin: 10px 20px;
     padding: 20px;
     min-width: 1080px;
     background-color: #eeeeee;
     border-radius: 10px;
     box-shadow: 10px 10px 5px #000000aa;
+    user-select: none;
+}
+#image-wrapper.loading {
+    animation: fadeout;
+    animation-duration: 0.3s;
+    opacity: 0%;
+}
+#image-wrapper.liked {
+    background-color: #fdff80;
 }
 
 #image {
@@ -24,6 +28,44 @@
     border-radius: 5px;
 }
 
+#like-wrapper {
+    position: absolute;
+    text-align: center;
+    top: 15%;
+    left: 40%;
+    font-size: 400px;
+    color: #fafd3b;
+}
+#like-wrapper.active {
+    animation: like;
+    animation-duration: 0.75s;
+}
+#like-wrapper.not-shown {
+    animation: fadeout;
+    animation-duration: 0.3s;
+    opacity: 0;
+}
+
+#unlike-wrapper {
+    position: absolute;
+    text-align: center;
+    top: 15%;
+    left: 40%;
+    font-size: 300px;
+    color: #6b6b6b;
+}
+#unlike-wrapper.active {
+    animation: unlike;
+    animation-duration: 0.75s;
+}
+#unlike-wrapper.not-shown {
+    animation: fadeout;
+    animation-duration: 0.3s;
+    opacity: 0;
+    padding-left: 50px;
+    padding-top: 50px;
+}
+
 @keyframes fadeout {
     from {opacity: 100;}
     to {opacity: 0;}
@@ -31,4 +73,29 @@
 @keyframes fadein {
     from {opacity: 0;}
     to {opacity: 100;}
+}
+
+@keyframes like {
+    from {
+        color: #6b6b6b;
+        font-size: 300px;
+        padding-left: 50px;
+        padding-top: 50px;
+    }
+    to {
+        color: #fafd3b;
+        font-size: 400px;
+    }
+}
+@keyframes unlike {
+    from {
+        color: #fafd3b;
+        font-size: 400px;
+    }
+    to {
+        color: #6b6b6b;
+        font-size: 300px;
+        padding-left: 50px;
+        padding-top: 50px;
+    }
 }
